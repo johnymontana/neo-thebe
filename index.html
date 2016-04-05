@@ -1,0 +1,50 @@
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>index</title>
+	<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="http://cdn.jupyter.org/thebe/notebook3.0.0/static/main-built.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.6.0/codemirror.min.css" type="text/css"/>
+</head>
+<body id="index" onload="">
+<script type="text/javascript" charset="utf-8">
+    $(function(){
+        new Thebe({url:"http://192.168.99.100:8888", tmpnb_mode:false, kernel_name: "python3"});
+    });	
+</script>
+
+<h2>Testing</h2>
+  
+<pre data-executable="data-executable">
+[w for w in range(1,5)]
+</pre>
+
+<h2>Docker Compose Setup</h2>
+
+  <pre data-executable="data-executable">
+from py2neo import Graph
+
+g = Graph("http://neo4j:7474/db/data")
+g.cypher.execute("RETURN 1")
+  </pre>
+
+
+<h2>Debugging</h2>
+
+<pre data-executable="data-executable">
+from jupyter_core.paths import jupyter_data_dir
+print(jupyter_data_dir())
+</pre>
+
+<pre data-executable="data-executable">
+!pip list
+</pre>
+
+<pre data-executable="data-executable">
+!pip install py2neo
+</pre>
+
+<pre data-executable="data-executable">
+!python --version
+</pre>
+
+</body>
